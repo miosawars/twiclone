@@ -1,0 +1,24 @@
+<div class="home-content">
+  <div class="home-header">
+    <p>今の気持ちをつぶやいてみよう</p>
+  </div>
+
+<%= form_tag("/posts/create") do %>
+<div class="home-form">
+  <textarea name="content"><%= @post.content %></textarea>
+  <input type="submit" value ="つぶやく">
+</div>
+<% end %>
+
+<div class="home-index">
+  <% @posts.each do |post| %>
+  <p class="index-content">
+  <%= link_to(post.content, "/posts/#{post.id}") %>
+  <span class="index-created">
+  <%= post.created_at %>
+  </span>
+  </p>
+  <% end %>
+</div>
+
+</div>

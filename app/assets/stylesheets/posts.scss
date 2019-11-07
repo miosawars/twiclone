@@ -1,0 +1,21 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.posts-content {
+  letter-spacing: 3px;
+  padding: 100px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: white;
+}
+
+.posts-content h2 {
+  font-weight: normal;
+}
+
+
+.posts-menu {
+  float: right;
+}

@@ -1,0 +1,18 @@
+<div class="posts-container">
+
+  <div class="posts-content">
+    <h2>
+    <%= @post.content %>
+    </h2>
+  </div>
+
+  <div class="posts-created">
+    <%= @post.created_at %>
+  </div>
+
+  <div class="posts-menu">
+    <%= link_to("編集", "/posts/#{@post.id}/edit") %>
+    <%= link_to("削除", "/posts/#{@post.id}/destroy") %>
+  </div>
+
+</div>

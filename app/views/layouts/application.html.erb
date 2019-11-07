@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Twiclone</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <script>
+      $( document ).ready(function() {
+      // メッセージを３秒後にフェードアウトする
+      $('#notice').fadeOut(3000);
+      });
+    </script>
+
+    <header>
+      <div class="header-logo">
+        <%= link_to('Twiclone', '/') %>
+      </div>
+    </header>
+
+    <% if flash[:notice] %>
+      <div id="notice" class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>
