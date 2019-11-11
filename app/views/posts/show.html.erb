@@ -1,18 +1,31 @@
-<div class="posts-container">
+<div class="post-show">
+  <div class="post-show-user">
+    <p><%= link_to(@user.name, "/users/#{@user.id}")%></p>
+    <image src=" <%= "/user_images/#{@user.image_name}"%> ">
+  </div>
+    <div class="post-show-content">
+      <h2>
+      <%= @post.content %>
+      </h2>
+      <p><%= @post.created_at %></p>
 
-  <div class="posts-content">
-    <h2>
-    <%= @post.content %>
-    </h2>
+      <div class="post-show-likes">
+        <% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
+        <%= link_to("いいね！済み","/likes/#{@post.id}/destroy", {method: :post}) %>
+        <% else %>
+        <%= link_to("いいね！","/likes/#{@post.id}/create", {method: :post}) %>
+        <% end %>
+        <p><%= @likes_count %></p>
+      </div>
+    </div>
   </div>
 
-  <div class="posts-created">
-    <%= @post.created_at %>
+  <div class="post-menu">
+    <% if @post.user_id == @current_user.id %>
+    <p><%= link_to("編集", "/users/#{@post.id}/edit") %></p>
+    <p><%= link_to("削除", "/users/#{@post.id}/destroy") %></p>
   </div>
+    <% end %>
 
-  <div class="posts-menu">
-    <%= link_to("編集", "/posts/#{@post.id}/edit") %>
-    <%= link_to("削除", "/posts/#{@post.id}/destroy") %>
-  </div>
-
+</div>
 </div>

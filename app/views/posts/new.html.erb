@@ -1,0 +1,14 @@
+<h2>今の気持ちをつぶやいてみよう</h2>
+
+<% @post.errors.full_messages.each do |message| %>
+  <div class="error-form">
+    <%= message %>
+  </div>
+<% end %>
+
+<%= form_tag("/posts/create") do %>
+<div class="home-form">
+  <textarea name="content"><%= @post.content %></textarea>
+  <input type="submit" value ="つぶやく">
+</div>
+<% end %>

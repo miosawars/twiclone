@@ -16,6 +16,36 @@
 }
 
 
-.posts-menu {
-  float: right;
+//投稿詳細ページ
+.post-show-content p {
+  font-size: 12px;
+  text-align: right;
+}
+
+.post-show-content h2 {
+  font-weight: normal;
+}
+
+.post-show-user {
+  text-align: center;
+}
+
+.post-show-content {
+  background-color: white;
+  padding: 40px;
+  text-align: center;
+}
+
+.post-show-likes {
+  text-align: left;
+}
+
+.post-show-likes p {
+  display: inline-block;
+}
+
+.post-menu {
+  text-align: right;
+  margin: 0;
+  font-size: 12px;
 }

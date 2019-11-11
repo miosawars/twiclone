@@ -13,5 +13,67 @@
  *= require_tree .
  *= require_self
  */
+ * {
+   box-sizing: border-box;
+ }
 
- 
+ img {
+  width: 58px;
+ }
+
+ html {
+   font: 100%/1.5 'San Francisco', 'Hiragino Sans', sans-serif;
+   letter-spacing: 1px;
+   background-color: #EBF3FA;
+ }
+
+ /* フラッシュ ============================= */
+
+ .flash {
+   padding: 10px 0;
+   color: white;
+   background: skyblue;
+   text-align: center;
+   position: absolute;
+   z-index: 10;
+   width: 100%;
+   border-radius: 0 0 2px 2px;
+   font-size: 14px;
+ }
+
+
+ .link{
+   text-decoration: none;
+ }
+
+li {
+  display: inline;
+  list-style: none;
+  text-align: right;
+}
+
+header {
+  background-color: #D1DCE5;
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.header-logo {
+  padding-bottom: 0px;
+  font-family: Helvetica Neue;
+  font-size: 32px;
+  color: #7FC4F8;
+}
+
+.header-menu {
+  text-align: right;
+}
+
+.header-menu li {
+  padding-left: 5px;
+  text-align: right;
+}
+
+.header-menu li :hover{
+  background-color: #A6D4F6;
+}

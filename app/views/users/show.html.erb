@@ -1,0 +1,43 @@
+<div class="user-show">
+  <div class="show-user-content">
+  <img src="<%= "/user_images/#{@user.image_name}" %>">
+  <h2><%= @user.name %></h2>
+  </div>
+
+  <div class="user-tab">
+    <p><%= link_to("つぶやき", "/users/#{@user.id}") %></p>
+    <p><%= link_to("いいね", "/users/#{@user.id}/likes") %></p>
+  </div>
+
+  <% @user.posts.each do |post| %>
+  <% user = User.find_by(id: post.user_id) %>
+<div class="home-index">
+  <div class="index-left">
+    <div class="index-user-name">
+      <%= link_to(user.name, "/users/#{user.id}") %>
+    </div>
+    <img src="<%= "/user_images/#{user.image_name}" %>">
+  </div>
+
+  <div class="index-right">
+    <p class="index-content">
+    <%= link_to(post.content, "/posts/#{post.id}") %>
+    </p>
+    <p class="index-created">
+    <%= post.created_at %>
+    </p>
+  </div>
+</div>
+  <% end %>
+
+  <div class="user-menu">
+    <% if @user.id == @current_user.id %>
+    <p>ユーザー設定</p>
+    <p><%= link_to("編集", "/users/#{@user.id}/edit") %></p>
+  <p><%= link_to("削除", "/users/#{@user.id}/destroy") %></p>
+  </div>
+  <% end %>
+
+
+
+</div>
